@@ -1,0 +1,15 @@
+Package: treeImbalance
+Title: Imbalance metrics for time-sampled phylogenetic trees.
+Version: 0.1
+Authors@R: "Bethany Dearlove <bd357@cam.ac.uk> [aut, cre]"
+Description: Contains a number of methods for calculating the imbalance
+    (asymmetry) of a phylogenetic tree, including methods for permuting a
+    heterochronously sampled tree.
+Depends:
+    R (>= 3.0.2),
+    ape,
+    apTreeshape,
+    phylobase,
+    adephylo
+License: GPL (>=2)
+LazyData: true
