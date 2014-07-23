@@ -12,7 +12,7 @@ B1(tree)
 An object of class \code{numeric}.
 }
 \description{
-This calculates B1 for a phylogenetic tree. For each internal node \deqn{j}, we consider the leaf with the largest topological distance \deqn{Z_j}. Then,
+This calculates B1 for a phylogenetic tree. For each internal node \eqn{j}, we consider the leaf with the largest topological distance \eqn{Z_j}. Then,
 \deqn{ B_1 = \sum_{j \in \mathcal{I}-root} {Z_j^{-1} }}.
 }
 \examples{

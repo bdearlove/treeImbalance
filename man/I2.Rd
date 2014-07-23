@@ -12,7 +12,7 @@ I2(tree)
 An object of class \code{numeric}.
 }
 \description{
-This calculates I2, a weighted average of the balance of internal nodes, where \deqn{N} is the number of tips, \deqn{j} is the number of nodes, and \deqn{r_j} and \deqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
+This calculates I2, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \eqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
 \deqn{ I_2 = \frac{1}{(N-2)} \sum_{j \in \mathcal{I},r_j+l_j>2 } {|r_j-l_j|}/{|r_j+l_j-2|} }
 }
 \examples{

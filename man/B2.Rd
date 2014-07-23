@@ -12,7 +12,7 @@ B2(tree)
 An object of class \code{numeric}.
 }
 \description{
-This calculates B2 for a phylogenetic tree. If we consider the topological distance, \deqn{M_i}, between each leaf \deqn{i} and the root, then
+This calculates B2 for a phylogenetic tree. If we consider the topological distance, \eqn{M_i}, between each leaf \eqn{i} and the root, then
 \deqn{ B_2 = \sum_{i \in \mathcal{L}} {\frac{M_i}{2^{M_i}} }}.
 }
 \examples{

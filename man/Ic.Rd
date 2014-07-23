@@ -12,7 +12,7 @@ Ic(tree)
 An object of class \code{numeric}.
 }
 \description{
-This calculates Ic for a phylogenetic tree. This asymmetry metric uses a weighed average of the balance of internal nodes:
+This calculates Ic for a phylogenetic tree. This asymmetry metric uses a weighted average of the balance of internal nodes:
 \deqn{ I_c = \frac{1}{(N-1)} \sum_{j \in \mathcal{I}} w_j \frac{\max(r_j,l_j)-m_j}{r_j+l_j-m_j-1} }.
 }
 \examples{

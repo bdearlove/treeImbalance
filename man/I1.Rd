@@ -12,7 +12,7 @@ I1(tree)
 An object of class \code{numeric}.
 }
 \description{
-This calculates I1, a weighted average of the balance of internal nodes, where \deqn{N} is the number of tips, \deqn{j} is the number of nodes, and \deqn{r_j} and \deqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
+This calculates I1, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \deqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
 \deqn{ I_1 = \frac{2}{(N-1)(N-2)} \sum_{j \in \mathcal{I} } {|r_j-l_j|} }.
 I1 is closely related to the Colless index, which can be found using \code{colless} in \pkg{apTreeshape}, or by multiplying I1 by \deqn{\frac{(N-1)(N-2)}{2}}.
 }

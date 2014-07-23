@@ -12,7 +12,7 @@ var.M(tree)
 An object of class \code{numeric}.
 }
 \description{
-This calculates \deqn{\sigma^2_M}, a measure of asymmetry based on the topological distance, $M_i$, between tip $i$ and the root:
+This calculates \eqn{\sigma^2_M}, a measure of asymmetry based on the topological distance, $M_i$, between tip $i$ and the root:
 \deqn{ \sigma^2_M = \frac{1}{N} \sum_{i \in \mathcal{L}} {(M_i-M)^2} }.
 }
 \examples{

@@ -1,6 +1,6 @@
 #' I1
 #' 
-#' This calculates I1, a weighted average of the balance of internal nodes, where \deqn{N} is the number of tips, \deqn{j} is the number of nodes, and \deqn{r_j} and \deqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
+#' This calculates I1, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \deqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
 #' \deqn{ I_1 = \frac{2}{(N-1)(N-2)} \sum_{j \in \mathcal{I} } {|r_j-l_j|} }.
 #' I1 is closely related to the Colless index, which can be found using \code{colless} in \pkg{apTreeshape}, or by multiplying I1 by \deqn{\frac{(N-1)(N-2)}{2}}.
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
@@ -34,7 +34,7 @@ I1<-function(tree){
 
 #' I2
 #' 
-#' This calculates I2, a weighted average of the balance of internal nodes, where \deqn{N} is the number of tips, \deqn{j} is the number of nodes, and \deqn{r_j} and \deqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
+#' This calculates I2, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \eqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
 #' \deqn{ I_2 = \frac{1}{(N-2)} \sum_{j \in \mathcal{I},r_j+l_j>2 } {|r_j-l_j|}/{|r_j+l_j-2|} }
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
@@ -69,7 +69,7 @@ I2<-function(tree){
 
 #' Ic
 #' 
-#' This calculates Ic for a phylogenetic tree. This asymmetry metric uses a weighed average of the balance of internal nodes:
+#' This calculates Ic for a phylogenetic tree. This asymmetry metric uses a weighted average of the balance of internal nodes:
 #' \deqn{ I_c = \frac{1}{(N-1)} \sum_{j \in \mathcal{I}} w_j \frac{\max(r_j,l_j)-m_j}{r_j+l_j-m_j-1} }.
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
@@ -113,7 +113,7 @@ Ic<-function(tree){
 
 #' M
 #' 
-#' This calculates M (as defined in Pompei et al., 2012), a measure of asymmetry based on the topological distance, \deqn{M_i}, between tip \deqn{i} and the root:
+#' This calculates M (as defined in Pompei et al., 2012), a measure of asymmetry based on the topological distance, \eqn{M_i}, between tip \eqn{i} and the root:
 #' \deqn{ M = \frac{1}{N} \sum_{i \in \mathcal{L}} {M_i} }.
 #' This is equivalent to Sackin's index divided by the number of tips (also known as the normalised Sackin index).
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
@@ -146,7 +146,7 @@ M<-function(tree){
 
 #' var.M
 #' 
-#' This calculates \deqn{\sigma^2_M}, a measure of asymmetry based on the topological distance, $M_i$, between tip $i$ and the root:
+#' This calculates \eqn{\sigma^2_M}, a measure of asymmetry based on the topological distance, $M_i$, between tip $i$ and the root:
 #' \deqn{ \sigma^2_M = \frac{1}{N} \sum_{i \in \mathcal{L}} {(M_i-M)^2} }.
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
@@ -184,7 +184,7 @@ var.M<-function(tree){
 
 #' B1
 #' 
-#' This calculates B1 for a phylogenetic tree. For each internal node \deqn{j}, we consider the leaf with the largest topological distance \deqn{Z_j}. Then,
+#' This calculates B1 for a phylogenetic tree. For each internal node \eqn{j}, we consider the leaf with the largest topological distance \eqn{Z_j}. Then,
 #' \deqn{ B_1 = \sum_{j \in \mathcal{I}-root} {Z_j^{-1} }}.
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
@@ -230,7 +230,7 @@ B1<-function(tree){
 
 #' B2
 #' 
-#' This calculates B2 for a phylogenetic tree. If we consider the topological distance, \deqn{M_i}, between each leaf \deqn{i} and the root, then
+#' This calculates B2 for a phylogenetic tree. If we consider the topological distance, \eqn{M_i}, between each leaf \eqn{i} and the root, then
 #' \deqn{ B_2 = \sum_{i \in \mathcal{L}} {\frac{M_i}{2^{M_i}} }}.
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.

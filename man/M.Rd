@@ -12,7 +12,7 @@ M(tree)
 An object of class \code{numeric}.
 }
 \description{
-This calculates M (as defined in Pompei et al., 2012), a measure of asymmetry based on the topological distance, \deqn{M_i}, between tip \deqn{i} and the root:
+This calculates M (as defined in Pompei et al., 2012), a measure of asymmetry based on the topological distance, \eqn{M_i}, between tip \eqn{i} and the root:
 \deqn{ M = \frac{1}{N} \sum_{i \in \mathcal{L}} {M_i} }.
 This is equivalent to Sackin's index divided by the number of tips (also known as the normalised Sackin index).
 }
