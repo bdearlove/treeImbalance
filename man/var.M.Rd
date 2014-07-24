@@ -13,7 +13,7 @@ An object of class \code{numeric}.
 }
 \description{
 This calculates \eqn{\sigma^2_M}, a measure of asymmetry based on the topological distance, $M_i$, between tip $i$ and the root:
-\deqn{ \sigma^2_M = \frac{1}{N} \sum_{i \in \mathcal{L}} {(M_i-M)^2} }.
+\deqn{ \sigma^2_M = \frac{1}{N} \sum_{i \in \mathcal{L}} {(M_i-M)^2} .}
 }
 \examples{
 N=30
@@ -21,7 +21,7 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 var.M(tree)
 }
 \references{
-\itemise{
+\itemize{
  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
  \item Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
 }

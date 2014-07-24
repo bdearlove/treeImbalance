@@ -13,7 +13,7 @@ An object of class \code{numeric}.
 }
 \description{
 This calculates B2 for a phylogenetic tree. If we consider the topological distance, \eqn{M_i}, between each leaf \eqn{i} and the root, then
-\deqn{ B_2 = \sum_{i \in \mathcal{L}} {\frac{M_i}{2^{M_i}} }}.
+\deqn{ B_2 = \sum_{i \in \mathcal{L}} {\frac{M_i}{2^{M_i}} }.}
 }
 \examples{
 N=30
@@ -21,7 +21,7 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 B2(tree)
 }
 \references{
-\itemise{
+\itemize{
  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
  \item Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
 }

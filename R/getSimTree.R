@@ -29,7 +29,7 @@ getCoalescenceEvents<-function(tree){
   return(times)
 }
 
-#' getSimTrees
+#' getSimTree
 #' 
 #' A function to permute a tree with the same tip and internal node times.
 #' @param tree an object of class \code{phylo}

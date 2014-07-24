@@ -13,7 +13,7 @@ An object of class \code{numeric}.
 }
 \description{
 This calculates B1 for a phylogenetic tree. For each internal node \eqn{j}, we consider the leaf with the largest topological distance \eqn{Z_j}. Then,
-\deqn{ B_1 = \sum_{j \in \mathcal{I}-root} {Z_j^{-1} }}.
+\deqn{ B_1 = \sum_{j \in \mathcal{I}-root} {Z_j^{-1} }.}
 }
 \examples{
 N=30
@@ -21,7 +21,7 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 B1(tree)
 }
 \references{
-\itemise{
+\itemize{
  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
  \item Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
 }

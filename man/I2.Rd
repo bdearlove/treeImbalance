@@ -13,7 +13,7 @@ An object of class \code{numeric}.
 }
 \description{
 This calculates I2, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \eqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
-\deqn{ I_2 = \frac{1}{(N-2)} \sum_{j \in \mathcal{I},r_j+l_j>2 } {|r_j-l_j|}/{|r_j+l_j-2|} }
+\deqn{ I_2 = \frac{1}{(N-2)} \sum_{j \in \mathcal{I},r_j+l_j>2 } {|r_j-l_j|}/{|r_j+l_j-2|}. }
 }
 \examples{
 N=30
@@ -21,7 +21,7 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 I2(tree)
 }
 \references{
-\itemise{
+\itemize{
  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
  \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136

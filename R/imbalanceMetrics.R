@@ -1,13 +1,13 @@
 #' I1
 #' 
-#' This calculates I1, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \deqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
-#' \deqn{ I_1 = \frac{2}{(N-1)(N-2)} \sum_{j \in \mathcal{I} } {|r_j-l_j|} }.
-#' I1 is closely related to the Colless index, which can be found using \code{\link[apTreeshape]{colless}}, or by multiplying I1 by \deqn{\frac{(N-1)(N-2)}{2}}.
+#' This calculates I1, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \eqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
+#' \deqn{ I_1 = \frac{2}{(N-1)(N-2)} \sum_{j \in \mathcal{I} } {|r_j-l_j|}.}
+#' I1 is closely related to the Colless index, which can be found using \code{\link[apTreeshape]{colless}}, or by multiplying I1 by \deqn{\frac{(N-1)(N-2)}{2}.}
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry, Colless Index
 #' @references
-#' \itemise{
+#' \itemize{
 #'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
 #'  \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
 #'  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
@@ -37,12 +37,12 @@ I1<-function(tree){
 #' I2
 #' 
 #' This calculates I2, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \eqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
-#' \deqn{ I_2 = \frac{1}{(N-2)} \sum_{j \in \mathcal{I},r_j+l_j>2 } {|r_j-l_j|}/{|r_j+l_j-2|} }
+#' \deqn{ I_2 = \frac{1}{(N-2)} \sum_{j \in \mathcal{I},r_j+l_j>2 } {|r_j-l_j|}/{|r_j+l_j-2|}. }
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references 
-#' \itemise{
+#' \itemize{
 #'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
 #'  \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
 #'  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
@@ -74,12 +74,12 @@ I2<-function(tree){
 #' Ic
 #' 
 #' This calculates Ic for a phylogenetic tree. This asymmetry metric uses a weighted average of the balance of internal nodes:
-#' \deqn{ I_c = \frac{1}{(N-1)} \sum_{j \in \mathcal{I}} w_j \frac{\max(r_j,l_j)-m_j}{r_j+l_j-m_j-1} }.
+#' \deqn{ I_c = \frac{1}{(N-1)} \sum_{j \in \mathcal{I}} w_j \frac{\max(r_j,l_j)-m_j}{r_j+l_j-m_j-1}. }
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references
-#' \itemise{ 
+#' \itemize{ 
 #'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
 #'  \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844?854.
 #'  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235?243. doi: 10.1006/jtbi.1995.0136
@@ -120,13 +120,13 @@ Ic<-function(tree){
 #' M
 #' 
 #' This calculates M (as defined in Pompei et al., 2012), a measure of asymmetry based on the topological distance, \eqn{M_i}, between tip \eqn{i} and the root:
-#' \deqn{ M = \frac{1}{N} \sum_{i \in \mathcal{L}} {M_i} }.
+#' \deqn{ M = \frac{1}{N} \sum_{i \in \mathcal{L}} {M_i}.}
 #' This is equivalent to Sackin's index divided by the number of tips (also known as the normalised Sackin index). See also \code{\link[apTreeshape]{sackin}}
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry, Sackin's index
 #' @references 
-#' \itemise{ 
+#' \itemize{ 
 #'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
 #'  \item Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
 #' }
@@ -155,12 +155,12 @@ M<-function(tree){
 #' var.M
 #' 
 #' This calculates \eqn{\sigma^2_M}, a measure of asymmetry based on the topological distance, $M_i$, between tip $i$ and the root:
-#' \deqn{ \sigma^2_M = \frac{1}{N} \sum_{i \in \mathcal{L}} {(M_i-M)^2} }.
+#' \deqn{ \sigma^2_M = \frac{1}{N} \sum_{i \in \mathcal{L}} {(M_i-M)^2} .}
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references
-#' \itemise{ 
+#' \itemize{ 
 #'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
 #'  \item Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
 #' }
@@ -195,12 +195,12 @@ var.M<-function(tree){
 #' B1
 #' 
 #' This calculates B1 for a phylogenetic tree. For each internal node \eqn{j}, we consider the leaf with the largest topological distance \eqn{Z_j}. Then,
-#' \deqn{ B_1 = \sum_{j \in \mathcal{I}-root} {Z_j^{-1} }}.
+#' \deqn{ B_1 = \sum_{j \in \mathcal{I}-root} {Z_j^{-1} }.}
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references 
-#' \itemise{ 
+#' \itemize{ 
 #'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
 #'  \item Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
 #' }
@@ -243,12 +243,12 @@ B1<-function(tree){
 #' B2
 #' 
 #' This calculates B2 for a phylogenetic tree. If we consider the topological distance, \eqn{M_i}, between each leaf \eqn{i} and the root, then
-#' \deqn{ B_2 = \sum_{i \in \mathcal{L}} {\frac{M_i}{2^{M_i}} }}.
+#' \deqn{ B_2 = \sum_{i \in \mathcal{L}} {\frac{M_i}{2^{M_i}} }.}
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references 
-#' \itemise{ 
+#' \itemize{ 
 #'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
 #'  \item Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
 #' }
