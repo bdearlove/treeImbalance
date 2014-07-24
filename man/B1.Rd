@@ -21,8 +21,10 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 B1(tree)
 }
 \references{
-Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
+\itemise{
+ \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+ \item Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
+}
 }
 \keyword{asymmetry}
 \keyword{imbalance,}

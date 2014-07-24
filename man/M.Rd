@@ -14,7 +14,7 @@ An object of class \code{numeric}.
 \description{
 This calculates M (as defined in Pompei et al., 2012), a measure of asymmetry based on the topological distance, \eqn{M_i}, between tip \eqn{i} and the root:
 \deqn{ M = \frac{1}{N} \sum_{i \in \mathcal{L}} {M_i} }.
-This is equivalent to Sackin's index divided by the number of tips (also known as the normalised Sackin index).
+This is equivalent to Sackin's index divided by the number of tips (also known as the normalised Sackin index). See also \code{\link[apTreeshape]{sackin}}
 }
 \examples{
 N=30
@@ -22,8 +22,10 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 M(tree)
 }
 \references{
-Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+\itemise{
+ \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+ \item Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+}
 }
 \keyword{Sackin's}
 \keyword{asymmetry,}

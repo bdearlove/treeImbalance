@@ -21,8 +21,10 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 var.M(tree)
 }
 \references{
-Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+\itemise{
+ \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+ \item Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+}
 }
 \keyword{asymmetry}
 \keyword{imbalance,}

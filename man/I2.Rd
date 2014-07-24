@@ -21,9 +21,11 @@ tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
 I2(tree)
 }
 \references{
-Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
-Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
+\itemise{
+ \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+ \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
+ \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
+}
 }
 \keyword{asymmetry}
 \keyword{imbalance,}

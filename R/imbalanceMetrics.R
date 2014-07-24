@@ -2,14 +2,16 @@
 #' 
 #' This calculates I1, a weighted average of the balance of internal nodes, where \eqn{N} is the number of tips, \deqn{j} is the number of nodes, and \eqn{r_j} and \eqn{l_j} represent the number of tips in the left and right subtrees respectively. Then,
 #' \deqn{ I_1 = \frac{2}{(N-1)(N-2)} \sum_{j \in \mathcal{I} } {|r_j-l_j|} }.
-#' I1 is closely related to the Colless index, which can be found using \code{colless} in \pkg{apTreeshape}, or by multiplying I1 by \deqn{\frac{(N-1)(N-2)}{2}}.
+#' I1 is closely related to the Colless index, which can be found using \code{\link[apTreeshape]{colless}}, or by multiplying I1 by \deqn{\frac{(N-1)(N-2)}{2}}.
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry, Colless Index
-#' @references 
-#' Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-#' Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
-#' Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
+#' @references
+#' \itemise{
+#'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+#'  \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
+#'  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
+#' }
 #' @export
 #' @examples
 #' N=30
@@ -40,9 +42,11 @@ I1<-function(tree){
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references 
-#' Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-#' Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
-#' Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
+#' \itemise{
+#'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+#'  \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844-854.
+#'  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235-243. doi: 10.1006/jtbi.1995.0136
+#' }
 #' @export
 #' @examples
 #' N=30
@@ -74,10 +78,12 @@ I2<-function(tree){
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
-#' @references 
-#' Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-#' Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844–854.
-#' Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235–243. doi: 10.1006/jtbi.1995.0136
+#' @references
+#' \itemise{ 
+#'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+#'  \item Purvis A, Agapow PM (2002) Phylogeny imbalance: Taxonomic level matters. Systematic Biology 51: 844?854.
+#'  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235?243. doi: 10.1006/jtbi.1995.0136
+#' }
 #' @export
 #' @examples
 #' N=30
@@ -115,13 +121,15 @@ Ic<-function(tree){
 #' 
 #' This calculates M (as defined in Pompei et al., 2012), a measure of asymmetry based on the topological distance, \eqn{M_i}, between tip \eqn{i} and the root:
 #' \deqn{ M = \frac{1}{N} \sum_{i \in \mathcal{L}} {M_i} }.
-#' This is equivalent to Sackin's index divided by the number of tips (also known as the normalised Sackin index).
+#' This is equivalent to Sackin's index divided by the number of tips (also known as the normalised Sackin index). See also \code{\link[apTreeshape]{sackin}}
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry, Sackin's index
 #' @references 
-#' Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-#' Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+#' \itemise{ 
+#'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+#'  \item Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+#' }
 #' @export
 #' @examples
 #' N=30
@@ -152,8 +160,10 @@ M<-function(tree){
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references
-#' Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-#' Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+#' \itemise{ 
+#'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+#'  \item Sackin MJ (1972) Good and bad phenograms. Systematic Biology 21: 225-226.
+#' }
 #' @export
 #' @examples
 #' N=30
@@ -190,8 +200,10 @@ var.M<-function(tree){
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references 
-#' Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-#' Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
+#' \itemise{ 
+#'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+#'  \item Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
+#' }
 #' @export
 #' @examples
 #' N=30
@@ -236,8 +248,10 @@ B1<-function(tree){
 #' @return An object of class \code{numeric}.
 #' @keywords imbalance, asymmetry
 #' @references 
-#' Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
-#' Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
+#' \itemise{ 
+#'  \item Pompei S, Loreto V, Tria F (2012) Phylogenetic Properties of RNA Viruses. PLoS ONE 7(9): e44849. doi:10.1371/journal.pone.0044849
+#'  \item Shao K, Sokal R (1990) Tree balance. Systematic Zooology 39: 266-276
+#' }
 #' @export
 #' @examples
 #' N=30
