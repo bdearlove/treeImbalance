@@ -71,5 +71,8 @@ getSimTree<-function(tree){
   tree.sim$edge<-cbind(ancestor,1:(2*n-1))[-(n+1),]
   tree.sim$edge.length<-branches[-(n+1)]
   
+  #This fixes plotting issues of overlapping branches
+  tree.sim<-read.tree(text=write.tree(tree.sim))
+  
   return(tree.sim)
 }
