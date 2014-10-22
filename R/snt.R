@@ -60,7 +60,7 @@ snt <- function(phy,tm=NULL,nsteps=NULL){
       tm <- seq(0,tmrca,by=tmrca/(nsteps-1))
     }
     else{
-      tm <- c(0,sort(unique(unlist(phy.bt))))  #Get branching times- either given, or from tree
+      tm <- c(0,sort(unlist(phy.bt)))  #Get branching times- either given, or from tree
     }
   }
   nst <- length(tm)   #Time intervals, starting at zero
