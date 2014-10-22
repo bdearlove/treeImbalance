@@ -55,7 +55,11 @@ getSimTree<-function(tree){
   for(i in (2*n-1):(n+1)){
     this.node<-i	#Define ancestral node
     this.node.time<-node.times[i]		#Get time for current node
-    valid.nodes.coal<-setdiff(node.remaining[which(node.times[c(node.remaining)]>=this.node.time)],this.node)	#Only allow coalescence of nodes below this one
+    if(this.node>(n+1)){
+      valid.nodes.coal<-setdiff(node.remaining[which(node.times[c(node.remaining)]>=this.node.time)],this.node:n+1)  #Only allow coalescence of nodes below this one
+    }else{
+      valid.nodes.coal<-setdiff(node.remaining[which(node.times[c(node.remaining)]>=this.node.time)],this.node)  #Only allow coalescence of nodes below this one
+    }
     nodes.coal<-sample(valid.nodes.coal,2,replace=F)	#Sample which two valid nodes should coalesce
     ancestor[nodes.coal]<-i		#Set current node to be ancestor of nodes just sampled
     new.tree.nodes[(2*n-i),]<-nodes.coal	#Save daughter nodes of this node
