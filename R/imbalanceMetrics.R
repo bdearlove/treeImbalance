@@ -73,7 +73,7 @@ I2<-function(tree){
 
 #' Ic
 #' 
-#' This calculates Ic for a phylogenetic tree. This asymmetry metric uses a weighted average of the balance of internal nodes:
+#' This calculates Ic (as defined in Pompei et al., 2012) for a phylogenetic tree. This asymmetry metric uses a weighted average of the balance of internal nodes:
 #' \deqn{ I_c = \frac{1}{(N-1)} \sum_{j \in \mathcal{I}} w_j \frac{\max(r_j,l_j)-m_j}{r_j+l_j-m_j-1}. }
 #' @param tree A tree of class \code{phylo} or \code{treeshape}.
 #' @return An object of class \code{numeric}.
@@ -115,6 +115,51 @@ Ic<-function(tree){
 		result<-sum(w[which(rl.sum>3)]*(rl.max[which(rl.sum>3)]-m[which(rl.sum>3)])/(rj[which(rl.sum>3)]+lj[which(rl.sum>3)]-m[which(rl.sum>3)]-1))/(N-1)
 		return(result)
 	}
+}
+
+#' mean.Iprime
+#' 
+#' This calculates the mean of I' (Purvis and Agapow, 2012) for a phylogenetic tree. This asymmetry metric uses a weighted average of the balance of internal nodes:
+#' \deqn{ mean.Iprime = \frac{1}{(N-1)} \sum_{j \in \mathcal{I}} w_j \frac{\max(r_j,l_j)-m_j}{r_j+l_j-m_j-1}, } where \eqn{w_j = \frac{r_j+l_j-1}{r_j+l_j}} if \eqn{n} is even and \eqn{w_j = 1} if \eqn{n} is odd.
+#' @param tree A tree of class \code{phylo} or \code{treeshape}.
+#' @return An object of class \code{numeric}.
+#' @keywords imbalance, asymmetry
+#' @references
+#' \itemize{ 
+#'  \item Purvis A, Katzourakis A, Agapow PM (2002) Evaluating phylogenetic tree shape: Two modifications to Fusco and Cronk's method. Journal of Theoretical Biology 214:99-103.
+#'  \item Fusco G, Cronk Q (1995) A new method for evaluating the shape of large phylogenies. Journal of Theoretical Biology 175: 235?243. doi: 10.1006/jtbi.1995.0136
+#' }
+#' @export
+#' @examples
+#' N=30
+#' tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
+#' mean.Iprime(tree)
+
+
+mean.Iprime<-function(tree){
+  if (!(inherits(tree, "phylo")||inherits(tree,"treeshape"))){
+    return("Input needs to be of class phylo or treeshape.")
+  }
+  else{
+    if(inherits(tree,"phylo")){
+      tree<-as.treeshape(tree)
+    }
+    
+    N<-dim(tree$merge)[1]+1
+    w<-array(,c(N-1))
+    m<-array(,c(N-1))
+    
+    rj<-smaller.clade.spectrum(tree)[,1]-smaller.clade.spectrum(tree)[,2]
+    lj<-smaller.clade.spectrum(tree)[,2]
+    rl.sum<-smaller.clade.spectrum(tree)[,1]
+    rl.max<-apply(cbind(rj,lj),1,max)
+    m[which(rl.sum%%2==0)]<-(rj[which(rl.sum%%2==0)]+lj[which(rl.sum%%2==0)])/2
+    m[which(rl.sum%%2==1)]<-(rj[which(rl.sum%%2==1)]+lj[which(rl.sum%%2==1)]+1)/2
+    w[which(rl.sum%%2==0)]<-(rl.sum[which(rl.sum%%2==0)]-1)/rl.sum[which(rl.sum%%2==0)]
+    w[which(rl.sum%%2==1)]<-1
+    result<-mean(w[which(rl.sum>3)]*(rl.max[which(rl.sum>3)]-m[which(rl.sum>3)])/(rj[which(rl.sum>3)]+lj[which(rl.sum>3)]-m[which(rl.sum>3)]-1))
+    return(result)
+  }
 }
 
 #' M
