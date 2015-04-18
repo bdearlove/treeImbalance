@@ -3,7 +3,7 @@
 \alias{snt}
 \title{snt}
 \usage{
-snt(phy, tm = NULL, nsteps = NULL)
+snt(tree)
 }
 \arguments{
 \item{tree}{an object of class \code{phylo}.}

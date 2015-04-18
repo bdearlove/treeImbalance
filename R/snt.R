@@ -9,22 +9,22 @@
 #' sackint<-snt(tree)
 
 #Get Sackin's index over time
-snt <- function(phy){
-  if (!inherits(phy, "phylo")){
+snt <- function(tree){
+  if (!inherits(tree, "phylo")){
     return(NA)
   }
-  phy.ntips <-phy$Nnode+1 #Get number of tips
-  phy4 <- as(phy,"phylo4")    #Convert to phy4 format (allows root to be found easily)
-  phy4.root <- rootNode(phy4) #Get root of tree
-  phy.bt<-max(dist.nodes(phy)[phy4.root,1:phy.ntips])-dist.nodes(phy)[phy4.root,(phy.ntips+1):(2*phy.ntips-1)]
-  tm<-c(0,sort(phy.bt))
-  phy.nodes<-as.numeric(names(sort(phy.bt)))
-  phy.snt<-array(0,(phy$Nnode+1))
-  phy.delta<-array(0,(phy$Nnode+1))
-  for(i in 1:(phy$Nnode)){
-    phy.delta[i+1]<-length(extract.clade(phy,phy.nodes[i])$tip.label)
-    phy.snt[i+1]<-phy.delta[i+1]+phy.snt[i]
+  tree.ntips <-tree$Nnode+1 #Get number of tips
+  tree4 <- as(tree,"phylo4")    #Convert to phy4 format (allows root to be found easily)
+  tree4.root <- rootNode(tree4) #Get root of tree
+  tree.bt<-max(dist.nodes(tree)[tree4.root,1:tree.ntips])-dist.nodes(tree)[tree4.root,(tree.ntips+1):(2*tree.ntips-1)]
+  tm<-c(0,sort(tree.bt))
+  tree.nodes<-as.numeric(names(sort(tree.bt)))
+  tree.snt<-array(0,(tree$Nnode+1))
+  tree.delta<-array(0,(tree$Nnode+1))
+  for(i in 1:(tree$Nnode)){
+    tree.delta[i+1]<-length(extract.clade(tree,tree.nodes[i])$tip.label)
+    tree.snt[i+1]<-tree.delta[i+1]+tree.snt[i]
   }
-  list(tm,phy.snt,phy.delta)
+  list(tm,tree.snt,tree.delta)
 }
 

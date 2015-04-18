@@ -136,7 +136,7 @@ Ic<-function(tree){
 #' mean.Iprime(tree)
 
 
-mean.Iprime<-function(tree){
+meanIprime<-function(tree){
   if (!(inherits(tree, "phylo")||inherits(tree,"treeshape"))){
     return("Input needs to be of class phylo or treeshape.")
   }
@@ -197,7 +197,7 @@ M<-function(tree){
 	}
 }
 
-#' var.M
+#' varM
 #' 
 #' This calculates \eqn{\sigma^2_M}, a measure of asymmetry based on the topological distance, $M_i$, between tip $i$ and the root:
 #' \deqn{ \sigma^2_M = \frac{1}{N} \sum_{i \in \mathcal{L}} {(M_i-M)^2} .}
@@ -213,9 +213,9 @@ M<-function(tree){
 #' @examples
 #' N=30
 #' tree<-rtreeshape(1,tip.number=N,model="pda")[[1]]
-#' var.M(tree)
+#' varM(tree)
 
-var.M<-function(tree){
+varM<-function(tree){
 	if (!(inherits(tree, "phylo")||inherits(tree,"treeshape"))){
 		return("Input needs to be of class phylo or treeshape.")
 	}
