@@ -78,5 +78,10 @@ getSimTree<-function(tree){
   #This fixes plotting issues of overlapping branches
   tree.sim<-read.tree(text=write.tree(tree.sim))
   
+  #Add node labelling so can compare simulated trees to observed easily 
+  #Fix to problem trying to match by node height which fails due to branches calculation above
+  #1 = root, n-1 = node closest to present
+  tree.sim$node.label<-order(sapply((n+1):(2*n-1),function(x) nodeheight(tree.sim,x)))
+
   return(tree.sim)
 }
