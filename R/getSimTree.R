@@ -2,7 +2,8 @@
 #' 
 #' Gets the times of the tips of a heterochronously sampled tree with most recently sampled tip set to 0.
 #' @param tree A tree of class \code{phylo}.
-#' @return A vector of times.
+#' @return A object class \code{numeric} giving the tree tip sampling times.
+#' @export
 
 #Get tip times (most recently sampled tip at time 0)
 #In order of tree$tip.label
@@ -17,7 +18,8 @@ getTipTimes<-function(tree){
 #' 
 #' Gets the times of coalescence events (internal nodes), backwards in time from most recently sampled tip.
 #' @param tree A tree of class \code{phylo}.
-#' @return A vector of times.
+#' @return A object class \code{numeric} giving the coalescence times.
+#' @export
 
 
 #Get coalescence times, backwards in time from most recently sampled tip.
