@@ -9,16 +9,18 @@
 #' @examples
 #' tree<-rtree(8)
 #' tree2<-getSimTree(tree)
+#' node.match<-matchSimNode(tree,tree2,15)
 
 matchSimNode<-function(obstree,simtree,node){
-	n<-tree$Nnode+1	#number of taxa at tips
+	ntips<-obstree$Nnode+1	#number of taxa at tips
 	
 	#Order node heights in observed tree 
-	nodeheights.ordered<-order(sapply((ntips+1):(2*ntips-1),function(x) nodeheight(tree,x)))
+	nodeheights.ordered<-order(sapply((ntips+1):(2*ntips-1),function(x) nodeheight(obstree,x)))
 	
 	#Where observed node height falls in order
-	obsnode.location<-which(nodeheights.ordered==(node-n))
+	obsnode.location<-which(nodeheights.ordered==(node-ntips))
 
 	#Match in simulated tree using that order
-	simnode.location<-simtree$node.label[cluster.location]+ntips
+	simnode.location<-simtree$node.label[obsnode.location]+ntips
+  return(simnode.location)
 }
